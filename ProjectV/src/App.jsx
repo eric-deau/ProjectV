@@ -5,9 +5,18 @@ import Home from "./pages/Home";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './styles/App.css'
-import {Route, Routes} from 'react-router-dom'
+import axios from 'axios'
+import { Route, Routes } from 'react-router-dom'
+import dotenv from 'dotenv'
 
 function App() {
+  // const getAct = () => {
+  //   axios.get(`https://na.api.riotgames.com/val/content/v1/contents?${process.env.RIOT_API}`).then((response) => {
+  //     console.log(response.data)
+  //   }).catch((error) => {
+  //     console.log(error)
+  //   })
+  // }
   return (
     <>
       <Navbar/>
@@ -19,6 +28,7 @@ function App() {
           {/* <Route path="/login" element={<Login />} /> */}
         </Routes>
       </div>
+      <button onClick={() => getAct()}>Get Act</button>
     </>
   )
 }
