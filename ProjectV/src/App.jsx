@@ -2,21 +2,30 @@ import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Register from "./pages/Register";
 import Home from "./pages/Home";
+import ListOfAgents from './components/ListOfAgents'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './styles/App.css'
 import axios from 'axios'
 import { Route, Routes } from 'react-router-dom'
 import dotenv from 'dotenv'
+import FetchData from './FetchData';
 
 function App() {
-  // const getAct = () => {
-  //   axios.get(`https://na.api.riotgames.com/val/content/v1/contents?${process.env.RIOT_API}`).then((response) => {
-  //     console.log(response.data)
-  //   }).catch((error) => {
-  //     console.log(error)
-  //   })
-  // }
+  const [agent, setAgent] = useState([])
+
+  const getAgent = async () => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.get("http://localhost:5000/")
+      console.log(res.data)
+      return res.data
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <>
       <Navbar/>
@@ -28,7 +37,9 @@ function App() {
           {/* <Route path="/login" element={<Login />} /> */}
         </Routes>
       </div>
-      <button onClick={() => getAct()}>Get Act</button>
+      <FetchData />
+      {/* <ListOfAgents agents={agents} /> */}
+      {/* <button onClick={() => getAgent()}>Get Agent</button> */}
     </>
   )
 }
