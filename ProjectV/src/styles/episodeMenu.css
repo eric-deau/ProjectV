@@ -15,12 +15,11 @@
 
 .menu>li {
     margin: 0;
-
-    background-color: white;
+    background-color: #0f1822f3;
 }
 
 .menu>li:hover {
-    background-color: lightgray;
+    background-color: #ff4654;
 }
 
 .menu>li>button {
