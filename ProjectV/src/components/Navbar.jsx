@@ -11,7 +11,7 @@ export default function Navbar() {
                 <NavLink to="/" title="Home" />
                 <NavLink to="/contact" title="Contact" />
                 <NavLink to="/register" title="Register" />
-                <NavLink to="#" title="Login" />
+                <NavLink to="/leaderboard" title="Leaderboard" />
                 {/* {links.map((link, index) => (
                     <NavLink key={index} {...link} />
                 ))} */}

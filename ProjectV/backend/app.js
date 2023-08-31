@@ -25,6 +25,30 @@ app.get('/', async (req, res) => {
     }
 });
 
+app.get('/leaderboard', async (req, res) => {
+    console.log('Hello World!');
+    try {
+        const response = await axios.get(`https://na.api.riotgames.com/val/content/v1/contents?api_key=${process.env.RIOT_API}`)
+        console.log(response.data.acts)
+        return res.status(200).json(response.data.acts)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send('Server Error')
+    }
+});
+
+app.post('/leaderboard', async (req, res) => {
+    console.log('Hello World!');
+    try {
+        const response = await axios.get(`https://na.api.riotgames.com/val/content/v1/contents?api_key=${process.env.RIOT_API}`)
+        console.log(response.data.acts)
+        return res.status(200).json(response.data.acts)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send('Server Error')
+    }
+});
+
 
 
 module.exports = app;
