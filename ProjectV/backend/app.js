@@ -12,8 +12,7 @@ app.get('/', async (req, res) => {
     console.log('Hello World!');
     try {
         const response = await axios.get(`https://na.api.riotgames.com/val/content/v1/contents?api_key=${process.env.RIOT_API}`)
-        const acts = response.data.acts;
-        res.json(acts)
+        console.log(response.data.characters)
     } catch (error) {
         console.log(error)
         res.status(500).send('Server Error')
